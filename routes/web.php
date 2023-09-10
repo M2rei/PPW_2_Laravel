@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\MencobaController;
+use App\Http\Controllers\sekolahController;
+use App\Http\Controllers\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,5 +41,14 @@ Route::get('/home', function () {
 Route::get('/post', function () {
     return view('post');
 });
+
+Route::get('/boom', [PostController :: class, 'boomesport']);
+Route::get('/boom', [MencobaController ::class, 'boomesport']);
+Route::get('/prx', [MencobaController ::class, 'prxesport']);
+Route::get('/fnatic', [MencobaController ::class, 'fnaticesport']);
+Route::get('/fpx', [MencobaController ::class, 'fpxesport']);
+Route::get('/layouts/home', [MencobaController ::class, 'beranda']);
+
+Route::get('/sekolahs', [SekolahController::class, 'index'])->name('sekolahs.index');
 
 
